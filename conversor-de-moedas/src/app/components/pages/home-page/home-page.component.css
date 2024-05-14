@@ -1,0 +1,26 @@
+.container {
+  border: 2px solid #d2d2d2;
+  border-radius: 4px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.image-home {
+  max-width: 300px;
+}
+
+.image-home img {
+  width: 100%;
+}
+
+.container h1 {
+  margin-top: 40px;
+}
+
+.main-bord {
+  padding-top: 4rem;
+}
+
+.date-time p {
+  color: black;
+}

@@ -1,3 +1,4 @@
+/* eslint-disable @angular-eslint/no-empty-lifecycle-method */
 import { Component } from '@angular/core';
 
 @Component({
@@ -5,6 +6,8 @@ import { Component } from '@angular/core';
   templateUrl: './listagem-de-moedas.component.html',
   styleUrls: ['./listagem-de-moedas.component.css']
 })
-export class ListagemDeMoedasComponent  {
+export class ListagemDeMoedasComponent {
+
+
 
 }

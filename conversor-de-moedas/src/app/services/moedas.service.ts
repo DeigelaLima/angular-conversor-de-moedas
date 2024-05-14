@@ -1,0 +1,23 @@
+import { environment } from '../../environments/environment';
+import { ISimbolo } from '../interface/ISimbolo';
+import { Observable } from 'rxjs';
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
+@Injectable({
+  providedIn: 'root',
+})
+
+export class MoedasService {
+
+  constructor(private http: HttpClient) {}
+
+  getSymbols(): Observable<ISimbolo> {
+    return this.http.get<ISimbolo>(`${environment.API_URL}/symbols`);
+  }
+
+  converterMoeda(moedaOrigem: string, moedaDestino: string, valor: number) {
+    const url: string = `${environment.API_URL}/convert?from=${moedaOrigem}&to=${moedaDestino}&amount=${valor}`;
+    return this.http.get(url);
+  }
+}

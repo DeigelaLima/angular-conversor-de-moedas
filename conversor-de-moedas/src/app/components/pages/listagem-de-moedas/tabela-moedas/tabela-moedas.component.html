@@ -6,11 +6,13 @@
     <!-- <title>Listagem de Moedas</title> -->
   </head>
   <body>
-
+    <div class="container">
+      <h1>Listagem de Moedas</h1>
+    </div>
     <main class="container">
-      <mat-form-field>
+      <mat-form-field class="filter">
         <mat-label>Filtro</mat-label>
-        <input matInput (keyup)="applyFilter($event)" placeholder="Ex. USD " #input>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Ex. USD ">
       </mat-form-field>
 
       <div class="mat-elevation-z8">

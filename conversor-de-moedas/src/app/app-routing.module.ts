@@ -5,7 +5,7 @@ import { ListagemDeMoedasComponent } from './components/pages/listagem-de-moedas
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
-  {path: 'listagem-moedas', component: ListagemDeMoedasComponent},
+  {path: 'listagem-de-moedas', component: ListagemDeMoedasComponent},
 ];
 
 @NgModule({

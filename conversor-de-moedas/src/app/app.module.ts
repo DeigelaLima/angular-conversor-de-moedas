@@ -12,6 +12,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 import { FooterComponent } from './components/footer/footer.component';
@@ -38,7 +39,8 @@ import { MatTableModule } from '@angular/material/table';
     MatFormFieldModule,
     MatTableModule,
     HttpClientModule,
-    MatInputModule
+    MatInputModule,
+    BrowserAnimationsModule
 
   ],
   providers: [HttpClient],

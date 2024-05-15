@@ -3,7 +3,7 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  API_URL: 'http://api.exchangerate.host'
+  API_URL: 'https://v6.exchangerate-api.com/v6/84bb2a9d9130eac27aba99bb/codes'
 };
 
 /*

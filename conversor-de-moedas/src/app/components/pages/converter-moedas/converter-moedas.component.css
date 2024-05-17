@@ -2,6 +2,67 @@ main {
   padding: 30px 0;
 }
 
+.container h1{
+  margin-top: 100px;
+  border-radius: 4px;
+  padding-left: 8px;
+  background-color: #d4ecc9;
+}
+
+.select-value {
+  height: 50px;
+  margin-top: 50px;
+  border-radius: 5px;
+  background-color: #d4ecc9;
+}
+
+.select-result {
+  height: 50px;
+  margin-top: 50px;
+  border-radius: 5px;
+  background-color: #d4ecc9;
+}
+
+.select-result mat-label {
+  padding-left: 10px;
+}
+
+.coin-destiny {
+  height: 50px;
+  margin-top: 50px;
+  border-radius: 5px;
+  background-color: #d4ecc9;
+}
+
+.coin-destiny mat-label {
+  padding-left: 10px;
+}
+
+.coin-origin {
+  height: 50px;
+  margin-top: 50px;
+  border-radius: 5px;
+  background-color: #d4ecc9;
+}
+
+.coin-origin mat-label {
+  padding-left: 10px;
+}
+
+
+.rate-conversion {
+  height: 50px;
+  margin-top: 50px;
+  border-radius: 5px;
+  background-color: #d4ecc9;
+}
+
+.rate-conversion mat-label {
+  padding-left: 10px;
+}
+
+
+
 #botao {
   background-color: rgb(76, 146, 19);
   margin-top: 40px;

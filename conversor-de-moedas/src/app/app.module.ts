@@ -17,7 +17,8 @@ import { MatTableModule } from '@angular/material/table';
 import {MatSelectModule} from '@angular/material/select';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
-import {MatDialogModule} from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatCardModule } from '@angular/material/card';
 
 import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/pages/home-page/home-page.component';
@@ -53,7 +54,8 @@ import { ConverterMoedasComponent } from './components/pages/converter-moedas/co
     MatSelectModule,
     ReactiveFormsModule,
     FormsModule,
-    MatDialogModule
+    MatDialogModule,
+    MatCardModule
 
   ],
   providers: [HttpClient],

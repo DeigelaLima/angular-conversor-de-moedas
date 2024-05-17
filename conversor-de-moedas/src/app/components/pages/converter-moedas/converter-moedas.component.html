@@ -7,7 +7,7 @@
 </head>
 <body>
 
-  <div class="container title">
+  <div class="container">
     <h1>Converter Moedas</h1>
   </div>
 
@@ -24,8 +24,8 @@
 
     <div class="container-fluid">
       <div class="row justify-content-center">
-        <div class="col-md-4">
-          <mat-form-field class="w-100">
+        <div class="col-md-4 width-select-coin-origin">
+          <mat-form-field class="w-100 coin-origin">
             <mat-label>Moeda Origem *</mat-label>
             <mat-select [(value)]="moedaOrigem">
               <mat-option id="moeda-origem" *ngFor="let moeda of moedas" [value]="moeda.code">
@@ -35,7 +35,7 @@
           </mat-form-field>
         </div>
         <div class="col-md-4">
-          <mat-form-field class="w-100">
+          <mat-form-field class="w-100 coin-destiny">
             <mat-label>Moeda Destino *</mat-label>
             <mat-select [(value)]="moedaDestino">
               <mat-option *ngFor="let moeda of moedas" [value]="moeda.code">
@@ -47,14 +47,14 @@
       </div>
 
       <div class="row justify-content-center">
-        <div class="col-md-4">
+        <div class="col-md-4 select-value">
           <mat-form-field class="w-100">
             <mat-label>Valor</mat-label>
             <input id="input-value" matInput [(ngModel)]="valor" type="text" required="required" name="numbers" pattern="[0-9]+$">
           </mat-form-field>
         </div>
         <div class="col-md-4">
-          <mat-form-field class="w-100">
+          <mat-form-field class="w-100 select-result">
             <mat-label>Resultado</mat-label>
             <input matInput [(ngModel)]="resultado" type="number" readonly>
           </mat-form-field>
@@ -63,7 +63,7 @@
 
       <div class="row justify-content-center">
         <div class="col-md-4">
-          <mat-form-field class="w-100">
+          <mat-form-field class="w-100 rate-conversion">
             <mat-label>Taxa de Conversão</mat-label>
             <input matInput type="number" [(ngModel)]="taxa" readonly="">
           </mat-form-field>

@@ -1,13 +1,12 @@
-/* table {
+mat-card {
+  padding: 16px;
+}
+
+table {
   width: 100%;
 }
 
-td, th {
-  width: 25%;
-} */
-
-.container h2{
-  margin-top: 100px;
+.container h2 {
   border-radius: 4px;
   padding-left: 8px;
   background-color: #d4ecc9;
@@ -24,11 +23,3 @@ td, th {
 }
 
 
-
-mat-card {
-  padding: 16px;
-}
-
-table {
-  width: 100%;
-}

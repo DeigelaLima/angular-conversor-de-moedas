@@ -1,81 +1,60 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
+<div class="container mt-5">
+  <h2>Converter Moedas</h2>
+</div>
 
-  <div class="container">
-    <h1>Converter Moedas</h1>
+<main class="container">
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-md-4">
+        <mat-form-field class="w-100 coin-origin">
+          <mat-label>Moeda Origem *</mat-label>
+          <mat-select [(value)]="moedaOrigem">
+            <mat-option id="moeda-origem" *ngFor="let moeda of moedas" [value]="moeda.code">
+              {{moeda.code}} - {{moeda.description}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-md-4">
+        <mat-form-field class="w-100 coin-destiny">
+          <mat-label>Moeda Destino *</mat-label>
+          <mat-select [(value)]="moedaDestino">
+            <mat-option *ngFor="let moeda of moedas" [value]="moeda.code">
+              {{moeda.code}} - {{moeda.description}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-md-4">
+        <mat-form-field class="w-100 select-value">
+          <mat-label>Valor</mat-label>
+          <input id="input-value" matInput [(ngModel)]="valor" type="text" required="required" name="numbers" pattern="[0-9]+$">
+        </mat-form-field>
+      </div>
+      <div class="col-md-4">
+        <mat-form-field class="w-100 select-result">
+          <mat-label>Resultado</mat-label>
+          <input matInput [(ngModel)]="resultado" type="number" readonly>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-md-4">
+        <mat-form-field class="w-100 rate-conversion">
+          <mat-label>Taxa de Conversão</mat-label>
+          <input matInput type="number" [(ngModel)]="taxa" readonly="">
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-md-4">
+        <button [disabled]="valor <= 0" mat-raised-button id="botao" class="w-100 btn btn-lg btn-block" (click)="converterMoeda()">Calcular Conversão</button>
+      </div>
+    </div>
   </div>
-
-  <main class="container">
-
-    <div class="alert">
-      <div class="selecione-moeda" *ngIf="!moedaOrigem || !moedaDestino">
-        <h3><i class="bi bi-exclamation-triangle-fill"></i> Selecione uma moeda de origem e uma moeda de destino.</h3>
-      </div>
-      <div class="aviso" id="erro" *ngIf="valor <= 0">
-        <h3><i class="bi bi-exclamation-triangle-fill"></i> Selecione um valor maior que 0.</h3>
-      </div>
-    </div>
-
-    <div class="container-fluid">
-      <div class="row justify-content-center">
-        <div class="col-md-4 width-select-coin-origin">
-          <mat-form-field class="w-100 coin-origin">
-            <mat-label>Moeda Origem *</mat-label>
-            <mat-select [(value)]="moedaOrigem">
-              <mat-option id="moeda-origem" *ngFor="let moeda of moedas" [value]="moeda.code">
-                {{moeda.code}} - {{moeda.description}}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
-        </div>
-        <div class="col-md-4">
-          <mat-form-field class="w-100 coin-destiny">
-            <mat-label>Moeda Destino *</mat-label>
-            <mat-select [(value)]="moedaDestino">
-              <mat-option *ngFor="let moeda of moedas" [value]="moeda.code">
-                {{moeda.code}} - {{moeda.description}}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
-        </div>
-      </div>
-
-      <div class="row justify-content-center">
-        <div class="col-md-4 select-value">
-          <mat-form-field class="w-100">
-            <mat-label>Valor</mat-label>
-            <input id="input-value" matInput [(ngModel)]="valor" type="text" required="required" name="numbers" pattern="[0-9]+$">
-          </mat-form-field>
-        </div>
-        <div class="col-md-4">
-          <mat-form-field class="w-100 select-result">
-            <mat-label>Resultado</mat-label>
-            <input matInput [(ngModel)]="resultado" type="number" readonly>
-          </mat-form-field>
-        </div>
-      </div>
-
-      <div class="row justify-content-center">
-        <div class="col-md-4">
-          <mat-form-field class="w-100 rate-conversion">
-            <mat-label>Taxa de Conversão</mat-label>
-            <input matInput type="number" [(ngModel)]="taxa" readonly="">
-          </mat-form-field>
-        </div>
-      </div>
-
-      <div class="row justify-content-center">
-        <div class="col-md-4">
-          <button [disabled]="valor <= 0" mat-raised-button id="botao" class="w-100 btn btn-lg btn-block" (click)="converterMoeda()">Calcular Conversão</button>
-        </div>
-      </div>
-    </div>
-  </main>
-</body>
-</html>
+</main>

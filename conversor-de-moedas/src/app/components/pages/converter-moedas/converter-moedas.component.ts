@@ -1,17 +1,17 @@
+import { IHistorico } from './../../interface/IHistorico';
+import { HistoricoService } from './../../../services/historico.service';
+import { IMoedas } from './../../interface/IMoeda';
+import { ISimbolo } from './../../interface/ISimbolo';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { IHistorico } from 'src/app/interface/IHistorico';
-import { IMoedas } from 'src/app/interface/IMoeda';
-import { ISimbolo } from 'src/app/interface/ISimbolo';
 import { MoedasService } from 'src/app/services/moedas.service';
 
 @Component({
   selector: 'app-converter-moedas',
   templateUrl: './converter-moedas.component.html',
-  styleUrls: ['./converter-moedas.component.css']
+  styleUrls: ['./converter-moedas.component.css'],
 })
 export class ConverterMoedasComponent implements OnInit {
-
   moedas!: IMoedas[];
   form!: FormGroup;
   moedaOrigem!: string;
@@ -37,11 +37,16 @@ export class ConverterMoedasComponent implements OnInit {
 
   ngOnInit(): void {
     this.moeda.listarMoedas().subscribe((data: ISimbolo) => {
-      let resultado = Object.keys(data.symbols).map(function (moeda: any) {
-        let resul = data.symbols[moeda];
-        return resul;
-      });
-      this.moedas = resultado;
+      if (data && data.symbols) {
+        let resultado = Object.keys(data.symbols).map(function (moeda: any) {
+          let resul = data.symbols[moeda];
+          return resul;
+        });
+        this.moedas = resultado;
+      } else {
+        console.error('Erro ao listar moedas: dados inválidos recebidos')
+      }
+
     });
   }
 
@@ -50,10 +55,14 @@ export class ConverterMoedasComponent implements OnInit {
       this.moeda
         .converterMoeda(this.moedaOrigem, this.moedaDestino, this.valor)
         .subscribe((data: any) => {
-          this.resultado = data['result'];
-          this.taxa = Object.values(data['info']);
-          this.valorSuperiorDolar();
-          this.salvarLocalStorage()
+          if (data) {
+            this.resultado = data['result'];
+            this.taxa = Object.values(data['info']);
+            this.valorSuperiorDolar();
+            this.salvarLocalStorage()
+          } else {
+            console.error('Erro na conversão de moeda: dados inválidos recebidos');
+          }
         });
     }
   }
@@ -62,8 +71,10 @@ export class ConverterMoedasComponent implements OnInit {
     this.moeda
       .converterMoeda(this.moedaDestino, 'USD', this.resultado)
       .subscribe((data: any) => {
-        this.maiorValorEmDolar = data['result'];
-        this.salvarLocalStorage();
+        if (data) {
+          this.maiorValorEmDolar = data['result'];
+          this.salvarLocalStorage();
+        }
       });
   }
 

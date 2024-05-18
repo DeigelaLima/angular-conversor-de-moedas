@@ -1,6 +1,6 @@
-import { IMoedas } from "./IMoeda";
+import { IMoeda } from "./IMoeda";
 export interface ISimbolo {
   motd: any[]
   success: boolean;
-  symbols: IMoedas[]
+  symbols: IMoeda[]
 }

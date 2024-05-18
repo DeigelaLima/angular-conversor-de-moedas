@@ -1,9 +1,9 @@
 
-<div class="container">
+<div class="container mt-5">
   <h2>Listagem de Moedas</h2>
   <mat-card>
+    <mat-label>Filtro</mat-label>
     <mat-form-field appearance="fill" class="w-100 select-filter">
-      <mat-label>Filtro</mat-label>
       <input matInput (input)="applyFilter($event)" placeholder="Digite o código da moeda">
     </mat-form-field>
 

@@ -24,7 +24,7 @@ export class TabelaMoedasComponent {
   ngOnInit(): void {
     this.moedaService.listarMoedas().subscribe(data => {
       this.moedas = data.supported_codes;
-      this.filteredMoedas = this.moedas.slice(0, this.pageSize);
+      this.filteredMoedas = this.moedas;
       this.totalMoedas = this.moedas.length;
     });
   }

@@ -20,12 +20,13 @@ import { FormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatCardModule } from '@angular/material/card';
 
-
 import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/pages/home-page/home-page.component';
 import { ListagemDeMoedasComponent } from './components/pages/listagem-de-moedas/listagem-de-moedas.component';
 import { TabelaMoedasComponent } from './components/pages/listagem-de-moedas/tabela-moedas/tabela-moedas.component';
 import { ConverterMoedasComponent } from './components/pages/converter-moedas/converter-moedas.component';
+import { HistoricoComponent } from './components/pages/historico/historico.component';
+// import { ModalDialogDeleteComponent } from './components/pages/historico/modal-dialog-delete/modal-dialog-delete.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,8 @@ import { ConverterMoedasComponent } from './components/pages/converter-moedas/co
     TabelaMoedasComponent,
     ListagemDeMoedasComponent,
     ConverterMoedasComponent,
+    // ModalDialogDeleteComponent,
+    HistoricoComponent,
   ],
   imports: [
     BrowserModule,

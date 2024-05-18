@@ -7,7 +7,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./listagem-de-moedas.component.css']
 })
 export class ListagemDeMoedasComponent {
-
-
-
 }

@@ -1,4 +1,4 @@
-export interface IMoedas {
+export interface IMoeda {
   description: string;
   code: string;
 }
